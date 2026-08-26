@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Kulisso - Orte mit offenem Vorhang</title>
+<meta name="description" content="Kunstwerke am Ort ihrer Entstehung erleben: Literatur, Musik, Film und Buehne zwischen Leipzig und Muldental. Mit Stimme, Karte und Resonanz.">
+<style>html,body{margin:0;padding:0;background:#f2f2f2}#err{display:none;position:fixed;left:8px;right:8px;bottom:8px;z-index:9999;background:#8B1A1A;color:#fff;font:12px/1.5 monospace;padding:10px 12px;border-radius:8px;word-break:break-all}</style>
+</head>
+<body>
+<div id="root"></div>
+<div id="err"></div>
+<script>
+window.onerror = function(msg, src, line, col){
+  var e = document.getElementById("err");
+  e.style.display = "block";
+  e.textContent = "Fehler: " + msg + " @" + (line||"?") + ":" + (col||"?");
+};
+window.addEventListener("unhandledrejection", function(ev){
+  var e = document.getElementById("err");
+  e.style.display = "block";
+  e.textContent = "Fehler (async): " + (ev.reason && ev.reason.message ? ev.reason.message : ev.reason);
+});
+</script>
+<script src="bundle53.js"></script>
+</body>
+</html>
