@@ -117,6 +117,8 @@ function PanZoomMap(props) {
   const playedRef = useRef({});
   const tourRef = useRef(false);
   const posRef = useRef(null);
+  const chainRef = useRef(0);
+  const geoRef = useRef({ cell: "", list: [] });
   useEffect(function () { posRef.current = userPos; }, [userPos]);
   useEffect(function () { tourRef.current = tour; }, [tour]);
   function tourRadius() {
@@ -129,55 +131,95 @@ function PanZoomMap(props) {
     if (s < 7) return 8000;
     return 40000;
   }
+  function hierPos() { return posRef.current || { lat: vp.clat, lng: vp.clng }; }
   function distTo(e) {
-    const p = posRef.current || { lat: vp.clat, lng: vp.clng };
+    const p = hierPos();
     const dy = (e.lat - p.lat) * 111320;
     const dx = (e.lng - p.lng) * 111320 * Math.cos(p.lat * Math.PI / 180);
     return Math.sqrt(dx * dx + dy * dy);
   }
-  function nextCandidates() {
-    const r = tourRadius();
-    function key(e) { return distTo(e) * (e.stufe === "B" ? 1.25 : 1); }
-    return ENTRIES.filter(function (e) { return !playedRef.current[e.id] && distTo(e) <= r; })
-      .sort(function (a, b) { return key(a) - key(b); });
+  function geoNah(cb) {
+    const p = hierPos();
+    const cell = p.lat.toFixed(2) + "_" + p.lng.toFixed(2);
+    if (geoRef.current.cell === cell) { cb(); return; }
+    const r = Math.min(tourRadius(), 10000);
+    fetch("https://de.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=" + p.lat + "%7C" + p.lng + "&gsradius=" + r + "&gslimit=30&format=json&origin=*")
+      .then(function (x) { return x.json(); })
+      .then(function (j) {
+        const rows = (j.query && j.query.geosearch) || [];
+        const skip = /^Liste |Bahnhof |Haltepunkt |Landkreis |Verwaltungs|Autobahn|Bundesstra|Staatsstra|Kreisstra|Gemarkung|Ortsteil|Wahlkreis|Flugplatz|Kläranlage|Umspannwerk/;
+        geoRef.current = { cell: cell, list: rows.filter(function (g) { return !skip.test(g.title); }).map(function (g) {
+          return { id: "w" + g.pageid, title: g.title, lat: g.lat, lng: g.lon, address: "", stufe: "W",
+            icon: "\uD83D\uDCCD", color: "#607D8B", category: "Geschichte", artist: "Wikipedia-Umgebung",
+            work: "Kulturort aus Wikipedia", distance: "", excerpt: g.title, ortstext: "",
+            frage: "Was erzaehlt dieser Ort - und wem?", kauf: "Mehr erfahren", preis: null,
+            shop: "https://de.wikipedia.org/wiki/" + encodeURIComponent(g.title), status: "live" };
+        }) };
+        cb();
+      }).catch(function () { cb(); });
   }
-  function speakSeq(chunks, onDone) {
+  function kandidaten() {
+    const r = tourRadius();
+    function ok(e) { return !playedRef.current[e.id] && distTo(e) <= r; }
+    const a = ENTRIES.filter(ok).map(function (e) { return { e: e, k: distTo(e) * (e.stufe === "B" ? 1.2 : 1) }; });
+    const w = geoRef.current.list.filter(ok).map(function (e) { return { e: e, k: distTo(e) * 1.45 }; });
+    return a.concat(w).sort(function (x, y) { return x.k - y.k; }).map(function (x) { return x.e; });
+  }
+  function speakSeq(chunks, chain, onDone) {
     if (!window.speechSynthesis) { onDone(); return; }
     let idx = 0;
     function one() {
-      if (!tourRef.current) return;
+      if (!tourRef.current || chainRef.current !== chain) return;
       if (idx >= chunks.length) { onDone(); return; }
       const u = new SpeechSynthesisUtterance(chunks[idx++]);
-      u.lang = "de-DE"; u.rate = 0.95;
-      u.onend = one; u.onerror = one;
+      u.lang = "de-DE"; u.rate = 0.97;
+      u.onend = one;
+      u.onerror = function () { if (chainRef.current === chain) one(); };
       window.speechSynthesis.speak(u);
     }
     window.speechSynthesis.cancel();
-    setTimeout(one, 120);
+    setTimeout(one, 150);
+  }
+  function sprechText(e, w) {
+    let intro = "In " + (e.address || "der Naehe") + ": " + e.title + ".";
+    if (e.artist && e.artist !== e.title && e.stufe !== "W" && e.artist.indexOf("Tafel") < 0 && e.artist.indexOf("Kulturziel") < 0) intro += " " + e.artist + ".";
+    let haupt;
+    if (w && w.text) haupt = w.text;
+    else haupt = (e.excerpt || "").replace(/\n/g, " ").replace(/Quelle: Wiki[a-z]*\.?/g, "");
+    return (intro + " " + haupt).replace(/\s+/g, " ");
   }
   function playNext() {
     if (!tourRef.current) return;
-    const c = nextCandidates();
-    if (c.length === 0) {
-      setTourNow(null); setTourNext(null);
-      speakSeq(["Keine weiteren Orte in der Naehe. Die Tour ist beendet."], function () { setTour(false); });
-      return;
+    const chain = ++chainRef.current;
+    function los() {
+      if (!tourRef.current || chainRef.current !== chain) return;
+      const c = kandidaten();
+      if (c.length === 0) {
+        setTourNow(null); setTourNext(null);
+        speakSeq(["Keine weiteren Orte in Reichweite. Die Tour laeuft weiter, sobald neue Orte in der Naehe sind."], chain, function () {
+          setTimeout(function () { if (chainRef.current === chain) playNext(); }, 20000);
+        });
+        return;
+      }
+      const e = c[0];
+      playedRef.current[e.id] = 1;
+      setTourNow(e); setTourNext(c[1] || null);
+      setVp(function (v) { return { clat: e.lat, clng: e.lng, span: v.span }; });
+      wikiHol(e.title, function (w) {
+        if (!tourRef.current || chainRef.current !== chain) return;
+        if (w && w.text) { e.ortstext = w.text; if (e.stufe === "W") e.excerpt = w.text.split(". ")[0] + "."; }
+        const text = sprechText(e, w);
+        const chunks = text.replace(/([.!?])\s+/g, "$1|").split("|").filter(function (s) { return s.trim().length > 1; });
+        speakSeq(chunks, chain, function () {
+          setTimeout(function () { if (chainRef.current === chain) playNext(); }, 800);
+        });
+      });
     }
-    const e = c[0];
-    playedRef.current[e.id] = 1;
-    setTourNow(e); setTourNext(c[1] || null);
-    setVp(function (v) { return { clat: e.lat, clng: e.lng, span: v.span }; });
-    wikiHol(e.title, function (w) {
-      if (!tourRef.current) return;
-      const km = distTo(e) >= 1000 ? " Entfernung: etwa " + (distTo(e) / 1000).toFixed(1).replace(".", ",") + " Kilometer." : "";
-      let text = "In " + (e.address || "der Naehe") + "." + km + " " + e.title + ". " + (e.artist || "") + ". " + (e.excerpt || "").replace(/\n/g, " ") + " " + (e.ortstext || "").replace(/ Quelle: Wikidata\.?/, "");
-      if (w && w.text) text += " Aus Wikipedia: " + w.text;
-      const chunks = text.replace(/([.!?])\s+/g, "$1|").split("|").filter(function (s) { return s.trim().length > 0; });
-      speakSeq(chunks, function () { setTimeout(playNext, 900); });
-    });
+    if (kandidaten().length < 5) geoNah(los); else los();
   }
   function toggleTour() {
     if (tour) {
+      chainRef.current++;
       tourRef.current = false;
       if (window.speechSynthesis) window.speechSynthesis.cancel();
       setTour(false); setTourNow(null); setTourNext(null);
@@ -192,7 +234,7 @@ function PanZoomMap(props) {
   function skipTour() {
     if (!tour) return;
     if (window.speechSynthesis) window.speechSynthesis.cancel();
-    setTimeout(playNext, 150);
+    setTimeout(playNext, 100);
   }
   const [geoErr, setGeoErr] = useState(null);
   const watchRef = useRef(null);
