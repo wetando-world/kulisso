@@ -988,7 +988,7 @@ export default function App() {
           <div style={{ color: "#F5E9C8", fontSize: 44, fontWeight: 700, letterSpacing: "0.04em", textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>Kulisso</div>
           <div style={{ color: "#C9A227", fontSize: 13.5, letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 10, marginBottom: 18, animation: "glow 3s ease-in-out infinite" }}>Orte mit offenem Vorhang</div>
           <div style={{ color: "rgba(245,233,200,0.85)", fontSize: 14, lineHeight: 1.55, maxWidth: 340, marginBottom: 28 }}>
-            {"Kulisso zeigt, wo Kunst entstanden ist: das Gedicht an seinem Haus, die Oper an ihrer Buehne, der Baum mit seiner Geschichte. Gehen, radeln oder fahren Sie los - Kulisso erzaehlt unterwegs, was hier geschah, und fuehrt zum Werk. In ganz Deutschland - von Sylt bis zum Bodensee - und an der Algarve."}
+            {"Kulisso zeigt die Welt hinter dem Vorhang, voller Kunst und Kultur. Kulisso macht Orte lebendig: wo Kunst entstanden ist, wo die Kuenstlerin, der Kuenstler war, wo ein Werk spielt und wo es Gefuehle ausgeloest hat. Eine neue Welt hinter den sichtbaren Orten. Gehen, radeln oder fahren Sie los. Kulisso erzaehlt unterwegs, was hier geschah, und fuehrt zum Werk. In ganz Deutschland, von Sylt bis zum Bodensee."}
           </div>
           <button onClick={function () { setAutoLoc(true); setIntroGo(true); setTimeout(function () { setShowIntro(false); }, 1450); }}
             style={{ background: "linear-gradient(180deg,#E4C766,#C9A227 55%,#A8861D)", color: "#2B0A0A", border: "none",
