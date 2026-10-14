@@ -33,33 +33,27 @@ const ALL_KAND = KAND.r.map(function (r) {
   };
 });
 const TREEMETA = {
-  "China": { f: "#C62828", p: "Nanjing (1988)", i: "Konfuzius-Institut Leipzig", k: "-", m: "bedeutende Community" },
-  "Niederlande": { f: "#F57F17", p: "-", i: "-", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Japan": { f: "#AD1457", p: "-", i: "Deutsch-Japanische Gesellschaft Leipzig / Das Japanische Haus e.V.", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Ukraine/Krim": { f: "#1565C0", p: "Kiew (1961)", i: "Ukrainische Gemeinde Leipzig", k: "-", m: "13.109 (Platz 2)" },
-  "Schweden": { f: "#0277BD", p: "-", i: "Growing-Cultures-Partner seit 2018", k: "Honorarkonsulat Schweden (bestaetigt)", m: "k.A." },
-  "USA/Kanada": { f: "#4527A0", p: "Houston (1993)", i: "Quebec-Studienzentrum (Uni Leipzig)", k: "US-Generalkonsulat Leipzig (bestaetigt)", m: "k.A." },
-  "Marokko/Atlas": { f: "#6D4C41", p: "-", i: "-", k: "-", m: "k.A." },
-  "Italien": { f: "#2E7D32", p: "Bologna (1962)", i: "CiCi - Centro di cultura italiana (Uni Leipzig)", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Ungarn": { f: "#00695C", p: "-", i: "-", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Serbien": { f: "#37474F", p: "-", i: "-", k: "-", m: "k.A." },
+  "China": { f: "#C62828", p: "Nanjing (1988)", i: "Konfuzius-Institut Leipzig", k: "-", m: "-" },
+  "Niederlande": { f: "#F57F17", p: "-", i: "-", k: "Honorarkonsul", m: "-" },
+  "Japan": { f: "#AD1457", p: "-", i: "Deutsch-Japanische Gesellschaft Leipzig / Das Japanische Haus e.V.", k: "Honorarkonsul", m: "-" },
+  "Ukraine/Krim": { f: "#1565C0", p: "Kiew (1961)", i: "Ukrainische Gemeinde Leipzig", k: "-", m: "rund 13.000 Menschen" },
+  "Schweden": { f: "#0277BD", p: "-", i: "-", k: "Honorarkonsulat Schweden", m: "-" },
+  "USA/Kanada": { f: "#4527A0", p: "Houston (1993)", i: "Quebec-Studienzentrum (Uni Leipzig)", k: "US-Generalkonsulat Leipzig", m: "-" },
+  "Marokko/Atlas": { f: "#6D4C41", p: "-", i: "-", k: "-", m: "-" },
+  "Italien": { f: "#2E7D32", p: "Bologna (1962)", i: "CiCi - Centro di cultura italiana (Uni Leipzig)", k: "Honorarkonsul", m: "-" },
+  "Ungarn": { f: "#00695C", p: "-", i: "-", k: "Honorarkonsul", m: "-" },
+  "Serbien": { f: "#37474F", p: "-", i: "-", k: "-", m: "-" },
   "Himalaja": { f: "#5D4037", p: "-", i: "-", k: "-", m: "-" },
-  "Georgien/Kaukasus": { f: "#7B1FA2", p: "-", i: "-", k: "-", m: "k.A." },
+  "Georgien/Kaukasus": { f: "#7B1FA2", p: "-", i: "-", k: "-", m: "-" },
   "China/Amur": { f: "#E65100", p: "s. China", i: "s. China", k: "-", m: "-" },
-  "Frankreich": { f: "#283593", p: "Lyon (1964)", i: "Institut francais Leipzig", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Iran/Persien": { f: "#8B1A1A", p: "-", i: "-", k: "-", m: "k.A." },
-  "Korea": { f: "#AD1457", p: "-", i: "-", k: "Honorarkonsul (pruefen)", m: "k.A." },
-  "Portugal": { f: "#2E7D32", p: "-", i: "-", k: "-", m: "k.A." },
-  "Libanon": { f: "#00695C", p: "-", i: "-", k: "-", m: "k.A." },
-  "Russland/Sibirien": { f: "#37474F", p: "-", i: "-", k: "-", m: "Russland 8.282 (Platz 3)" },
-  "Finnland": { f: "#0277BD", p: "-", i: "-", k: "Honorarkonsul (pruefen)", m: "k.A." }
+  "Frankreich": { f: "#283593", p: "Lyon (1964)", i: "Institut francais Leipzig", k: "Honorarkonsul", m: "-" },
+  "Iran/Persien": { f: "#8B1A1A", p: "-", i: "-", k: "-", m: "-" },
+  "Korea": { f: "#AD1457", p: "-", i: "-", k: "Honorarkonsul", m: "-" },
+  "Portugal": { f: "#2E7D32", p: "-", i: "-", k: "-", m: "-" },
+  "Libanon": { f: "#00695C", p: "-", i: "-", k: "-", m: "-" },
+  "Russland/Sibirien": { f: "#37474F", p: "-", i: "-", k: "-", m: "rund 8.300 Menschen" },
+  "Finnland": { f: "#0277BD", p: "-", i: "-", k: "Honorarkonsul", m: "-" }
 };
-const LUECKEN = [
-  { land: "Syrien", m: "14.104 (Platz 1)", idee: "Baumpflanzung + Kulturanker als FoxGo-Community-Projekt" },
-  { land: "Polen", m: "7.274 (Platz 4)", idee: "Polnische Laerche; Partnerstadt Krakau (1973); Polnisches Institut Filiale Leipzig als Partner" },
-  { land: "Rumaenien", m: "5.889 (Platz 5)", idee: "Pflanzprojekt offen" },
-  { land: "Vietnam", m: "4.140 (Platz 6)", idee: "Community seit DDR-Zeit; Pflanzprojekt offen" }
-];
 
 const BACKDROP = __BACKDROP__;
 const STREETS = __STREETS__;
@@ -70,6 +64,56 @@ const STREET_LINES = STREETS.s.map(function (st) {
   }
   return { n: st[0], pts: pts };
 });
+
+const WSCACHE = {};
+function wsHol(ort, cb) {
+  if (!ort) { cb([]); return; }
+  const key = ort.toLowerCase();
+  if (WSCACHE[key] !== undefined) { cb(WSCACHE[key]); return; }
+  const done = { d: false };
+  setTimeout(function () { if (!done.d) { done.d = true; cb([]); } }, 4500);
+  fetch("https://de.wikisource.org/w/api.php?action=query&list=search&srsearch=%22" + encodeURIComponent(ort) + "%22&srlimit=6&format=json&origin=*")
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      const rows = ((j.query && j.query.search) || []).filter(function (s) {
+        return !/^(Seite:|Index:|Liste |Zimmerische|ADB:|MKL1888:|RE:)/.test(s.title);
+      }).slice(0, 4).map(function (s) {
+        return { titel: s.title, url: "https://de.wikisource.org/wiki/" + encodeURIComponent(s.title.replace(/ /g, "_")) };
+      });
+      WSCACHE[key] = rows;
+      if (!done.d) { done.d = true; cb(rows); }
+    })
+    .catch(function () { WSCACHE[key] = []; if (!done.d) { done.d = true; cb([]); } });
+}
+
+const STRASSEN_LEX = {"goethe": ["Johann Wolfgang von Goethe", "Dichter", "Faust", "buch"], "schiller": ["Friedrich Schiller", "Dichter", "Die Raeuber", "buch"], "lessing": ["Gotthold Ephraim Lessing", "Aufklaerer", "Nathan der Weise", "buch"], "gellert": ["Christian Fuerchtegott Gellert", "Fabeldichter", "Fabeln", "buch"], "klopstock": ["Friedrich Gottlieb Klopstock", "Dichter", "Der Messias", "buch"], "heine": ["Heinrich Heine", "Dichter", "Buch der Lieder", "buch"], "fontane": ["Theodor Fontane", "Romancier", "Effi Briest", "buch"], "ringelnatz": ["Joachim Ringelnatz", "Dichter", "Kuttel Daddeldu", "buch"], "kästner": ["Erich Kaestner", "Schriftsteller", "Emil und die Detektive", "buch"], "kaestner": ["Erich Kaestner", "Schriftsteller", "Emil und die Detektive", "buch"], "brecht": ["Bertolt Brecht", "Dramatiker", "Dreigroschenoper", "buch"], "seghers": ["Anna Seghers", "Schriftstellerin", "Das siebte Kreuz", "buch"], "storm": ["Theodor Storm", "Dichter", "Der Schimmelreiter", "buch"], "raabe": ["Wilhelm Raabe", "Erzaehler", "Stopfkuchen", "buch"], "hebbel": ["Friedrich Hebbel", "Dramatiker", "Maria Magdalena", "buch"], "uhland": ["Ludwig Uhland", "Dichter", "Gedichte", "buch"], "rückert": ["Friedrich Rueckert", "Dichter", "Kindertotenlieder", "buch"], "mörike": ["Eduard Moerike", "Dichter", "Mozart auf der Reise nach Prag", "buch"], "hölderlin": ["Friedrich Hoelderlin", "Dichter", "Hyperion", "buch"], "novalis": ["Novalis", "Dichter", "Hymnen an die Nacht", "buch"], "eichendorff": ["Joseph von Eichendorff", "Dichter", "Taugenichts", "buch"], "kleist": ["Heinrich von Kleist", "Dramatiker", "Michael Kohlhaas", "buch"], "büchner": ["Georg Buechner", "Dramatiker", "Woyzeck", "buch"], "herder": ["Johann Gottfried Herder", "Philosoph", "Stimmen der Voelker", "buch"], "wieland": ["Christoph Martin Wieland", "Dichter", "Die Abderiten", "buch"], "gottsched": ["Johann Christoph Gottsched", "Aufklaerer", "Critische Dichtkunst", "buch"], "kant": ["Immanuel Kant", "Philosoph", "Kritik der reinen Vernunft", "buch"], "leibniz": ["Gottfried Wilhelm Leibniz", "Universalgelehrter", "Monadologie", "buch"], "fichte": ["Johann Gottlieb Fichte", "Philosoph", "Reden an die deutsche Nation", "buch"], "hegel": ["Georg Wilhelm Friedrich Hegel", "Philosoph", "Phaenomenologie des Geistes", "buch"], "schopenhauer": ["Arthur Schopenhauer", "Philosoph", "Die Welt als Wille und Vorstellung", "buch"], "nietzsche": ["Friedrich Nietzsche", "Philosoph", "Also sprach Zarathustra", "buch"], "thomas-mann": ["Thomas Mann", "Romancier", "Buddenbrooks", "buch"], "heinrich-mann": ["Heinrich Mann", "Romancier", "Der Untertan", "buch"], "hesse": ["Hermann Hesse", "Schriftsteller", "Der Steppenwolf", "buch"], "rilke": ["Rainer Maria Rilke", "Dichter", "Duineser Elegien", "buch"], "hauptmann": ["Gerhart Hauptmann", "Dramatiker", "Die Weber", "buch"], "tucholsky": ["Kurt Tucholsky", "Satiriker", "Schloss Gripsholm", "buch"], "fallada": ["Hans Fallada", "Romancier", "Jeder stirbt fuer sich allein", "buch"], "becher": ["Johannes R. Becher", "Dichter", "Gedichte", "buch"], "bobrowski": ["Johannes Bobrowski", "Dichter", "Levins Muehle", "buch"], "fühmann": ["Franz Fuehmann", "Erzaehler", "22 Tage", "buch"], "hermlin": ["Stephan Hermlin", "Schriftsteller", "Abendlicht", "buch"], "weinert": ["Erich Weinert", "Dichter", "Gedichte", "buch"], "loest": ["Erich Loest", "Schriftsteller", "Nikolaikirche", "buch"], "lene-voigt": ["Lene Voigt", "Mundartdichterin", "Saeksche Glassiger", "buch"], "morgenstern": ["Christian Morgenstern", "Dichter", "Galgenlieder", "buch"], "wilhelm-busch": ["Wilhelm Busch", "Dichter und Zeichner", "Max und Moritz", "buch"], "grimm": ["Brueder Grimm", "Maerchensammler", "Kinder- und Hausmaerchen", "buch"], "andersen": ["Hans Christian Andersen", "Maerchendichter", "Maerchen", "buch"], "shakespeare": ["William Shakespeare", "Dramatiker", "Hamlet", "buch"], "dante": ["Dante Alighieri", "Dichter", "Goettliche Komoedie", "buch"], "tolstoi": ["Leo Tolstoi", "Romancier", "Anna Karenina", "buch"], "dostojewski": ["Fjodor Dostojewski", "Romancier", "Schuld und Suehne", "buch"], "puschkin": ["Alexander Puschkin", "Dichter", "Eugen Onegin", "buch"], "gorki": ["Maxim Gorki", "Schriftsteller", "Nachtasyl", "buch"], "majakowski": ["Wladimir Majakowski", "Dichter", "Wolke in Hosen", "buch"], "cervantes": ["Miguel de Cervantes", "Romancier", "Don Quijote", "buch"], "molière": ["Moliere", "Komoediendichter", "Tartuffe", "buch"], "zola": ["Emile Zola", "Romancier", "Germinal", "buch"], "balzac": ["Honore de Balzac", "Romancier", "Vater Goriot", "buch"], "dickens": ["Charles Dickens", "Romancier", "Oliver Twist", "buch"], "byron": ["Lord Byron", "Dichter", "Gedichte", "buch"], "humboldt": ["Alexander von Humboldt", "Forscher und Autor", "Kosmos", "buch"], "luther": ["Martin Luther", "Reformator und Bibeluebersetzer", "Bibeluebersetzung", "buch"], "erasmus": ["Erasmus von Rotterdam", "Humanist", "Lob der Torheit", "buch"], "walther": ["Walther von der Vogelweide", "Minnesaenger", "Lieder", "buch"], "hans-sachs": ["Hans Sachs", "Meistersinger", "Fastnachtsspiele", "buch"], "gryphius": ["Andreas Gryphius", "Barockdichter", "Sonette", "buch"], "fleming": ["Paul Fleming", "Barockdichter", "Gedichte", "buch"], "jean-paul": ["Jean Paul", "Romancier", "Siebenkaes", "buch"], "hoffmann": ["E.T.A. Hoffmann", "Dichter und Komponist", "Der goldne Topf", "buch"], "chamisso": ["Adelbert von Chamisso", "Dichter", "Peter Schlemihl", "buch"], "keller": ["Gottfried Keller", "Erzaehler", "Der gruene Heinrich", "buch"], "stifter": ["Adalbert Stifter", "Erzaehler", "Der Nachsommer", "buch"], "droste": ["Annette von Droste-Huelshoff", "Dichterin", "Die Judenbuche", "buch"], "freiligrath": ["Ferdinand Freiligrath", "Dichter", "Gedichte", "buch"], "körner": ["Theodor Koerner", "Dichter", "Leier und Schwert", "buch"], "arndt": ["Ernst Moritz Arndt", "Dichter", "Gedichte", "buch"], "zuckmayer": ["Carl Zuckmayer", "Dramatiker", "Der Hauptmann von Koepenick", "buch"], "kafka": ["Franz Kafka", "Schriftsteller", "Der Process", "buch"], "musil": ["Robert Musil", "Romancier", "Der Mann ohne Eigenschaften", "buch"], "döblin": ["Alfred Doeblin", "Romancier", "Berlin Alexanderplatz", "buch"], "remarque": ["Erich Maria Remarque", "Romancier", "Im Westen nichts Neues", "buch"], "böll": ["Heinrich Boell", "Nobelpreistraeger", "Ansichten eines Clowns", "buch"], "grass": ["Guenter Grass", "Nobelpreistraeger", "Die Blechtrommel", "buch"], "christa-wolf": ["Christa Wolf", "Schriftstellerin", "Der geteilte Himmel", "buch"], "borchert": ["Wolfgang Borchert", "Dramatiker", "Draussen vor der Tuer", "buch"], "bach": ["Johann Sebastian Bach", "Komponist", "Matthaeuspassion", "musik"], "wagner": ["Richard Wagner", "Komponist", "Der Ring des Nibelungen", "musik"], "schumann": ["Robert Schumann", "Komponist", "Dichterliebe", "musik"], "clara-schumann": ["Clara Schumann", "Pianistin und Komponistin", "Klavierkonzert a-Moll", "musik"], "mendelssohn": ["Felix Mendelssohn Bartholdy", "Komponist", "Sommernachtstraum", "musik"], "grieg": ["Edvard Grieg", "Komponist", "Peer Gynt", "musik"], "beethoven": ["Ludwig van Beethoven", "Komponist", "Sinfonie Nr. 9", "musik"], "mozart": ["Wolfgang Amadeus Mozart", "Komponist", "Die Zauberfloete", "musik"], "haydn": ["Joseph Haydn", "Komponist", "Die Schoepfung", "musik"], "händel": ["Georg Friedrich Haendel", "Komponist", "Messiah", "musik"], "telemann": ["Georg Philipp Telemann", "Komponist", "Tafelmusik", "musik"], "lortzing": ["Albert Lortzing", "Komponist", "Zar und Zimmermann", "musik"], "brahms": ["Johannes Brahms", "Komponist", "Ein deutsches Requiem", "musik"], "schubert": ["Franz Schubert", "Komponist", "Winterreise", "musik"], "chopin": ["Frederic Chopin", "Komponist", "Nocturnes", "musik"], "liszt": ["Franz Liszt", "Komponist", "Faust-Sinfonie", "musik"], "verdi": ["Giuseppe Verdi", "Komponist", "La Traviata", "musik"], "tschaikowski": ["Peter Tschaikowski", "Komponist", "Schwanensee", "musik"], "dvořák": ["Antonin Dvorak", "Komponist", "Sinfonie aus der Neuen Welt", "musik"], "smetana": ["Bedrich Smetana", "Komponist", "Die Moldau", "musik"], "mahler": ["Gustav Mahler", "Komponist", "Sinfonie Nr. 1", "musik"], "reger": ["Max Reger", "Komponist", "Orgelwerke", "musik"], "carl-maria-von-weber": ["Carl Maria von Weber", "Komponist", "Der Freischuetz", "musik"], "gluck": ["Christoph Willibald Gluck", "Komponist", "Orpheus und Eurydike", "musik"], "hindemith": ["Paul Hindemith", "Komponist", "Mathis der Maler", "musik"], "eisler": ["Hanns Eisler", "Komponist", "Brecht-Lieder", "musik"], "dessau": ["Paul Dessau", "Komponist", "Buehnenmusiken", "musik"], "bruckner": ["Anton Bruckner", "Komponist", "Sinfonie Nr. 7", "musik"], "orff": ["Carl Orff", "Komponist", "Carmina Burana", "musik"], "richard-strauss": ["Richard Strauss", "Komponist", "Der Rosenkavalier", "musik"], "hugo-wolf": ["Hugo Wolf", "Komponist", "Moerike-Lieder", "musik"], "pfitzner": ["Hans Pfitzner", "Komponist", "Palestrina", "musik"], "kollwitz": ["Kaethe Kollwitz", "Kuenstlerin", "Grafikzyklen", "buch"], "beckmann": ["Max Beckmann", "Maler", "Bildband", "buch"], "klinger": ["Max Klinger", "Kuenstler", "Beethoven-Skulptur", "buch"], "liebermann": ["Max Liebermann", "Maler", "Bildband", "buch"], "dürer": ["Albrecht Duerer", "Kuenstler", "Melencolia", "buch"], "cranach": ["Lucas Cranach", "Maler", "Bildband", "buch"], "feininger": ["Lyonel Feininger", "Maler", "Gelmeroda", "buch"], "zille": ["Heinrich Zille", "Zeichner", "Berliner Milljoeh", "buch"], "menzel": ["Adolph Menzel", "Maler", "Bildband", "buch"], "caspar-david-friedrich": ["Caspar David Friedrich", "Maler", "Der Wanderer ueber dem Nebelmeer", "buch"], "holbein": ["Hans Holbein", "Maler", "Bildband", "buch"], "riemenschneider": ["Tilman Riemenschneider", "Bildhauer", "Altaere", "buch"], "schinkel": ["Karl Friedrich Schinkel", "Baumeister", "Bauwerke", "buch"], "gropius": ["Walter Gropius", "Bauhaus-Gruender", "Bauhaus", "buch"], "marlene-dietrich": ["Marlene Dietrich", "Schauspielerin", "Der blaue Engel", "film"], "hans-albers": ["Hans Albers", "Schauspieler", "Grosse Freiheit Nr. 7", "film"], "heinz-rühmann": ["Heinz Ruehmann", "Schauspieler", "Die Feuerzangenbowle", "film"], "fassbinder": ["Rainer Werner Fassbinder", "Regisseur", "Berlin Alexanderplatz", "film"], "fritz-lang": ["Fritz Lang", "Regisseur", "Metropolis", "film"], "murnau": ["Friedrich Wilhelm Murnau", "Regisseur", "Nosferatu", "film"]};
+const STRASSEN_RE = new RegExp("(" + Object.keys(STRASSEN_LEX).sort(function (a, b) { return b.length - a.length; }).map(function (k) { return k.replace(/-/g, "[- ]?"); }).join("|") + ")[- ]?(str|weg|platz|allee|gasse|ring|ufer|park|damm|promenade)", "i");
+function strassenPerson(name) {
+  const m = (name || "").toLowerCase().match(STRASSEN_RE);
+  if (!m) return null;
+  return STRASSEN_LEX[m[1].replace(/ /g, "-")] || STRASSEN_LEX[m[1]] || null;
+}
+const WSTXT = {};
+function wsText(titel, cb) {
+  if (WSTXT[titel] !== undefined) { cb(WSTXT[titel]); return; }
+  const done = { d: false };
+  setTimeout(function () { if (!done.d) { done.d = true; cb(null); } }, 5000);
+  fetch("https://de.wikisource.org/w/api.php?action=query&prop=revisions&rvprop=content&rvslots=main&titles=" + encodeURIComponent(titel) + "&format=json&formatversion=2&origin=*")
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      const p = j.query && j.query.pages && j.query.pages[0];
+      let t = (p && p.revisions && p.revisions[0] && p.revisions[0].slots && p.revisions[0].slots.main.content) || "";
+      for (let i = 0; i < 6; i++) t = t.replace(/\{\{[^{}]*\}\}/g, " ");
+      t = t.replace(/<!--[\s\S]*?-->/g, " ").replace(/<ref[\s\S]*?<\/ref>/g, " ").replace(/<[^>]+>/g, " ");
+      t = t.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1").replace(/\[\[([^\]]*)\]\]/g, "$1").replace(/'{2,}/g, "");
+      t = t.split("\n").filter(function (l) { return !/^\s*[|{}!=*#:]/.test(l) && l.indexOf("Kategorie:") < 0; }).join("\n");
+      t = t.replace(/[ \t]+/g, " ").replace(/\n{2,}/g, "\n").trim();
+      const out = t.length >= 80 ? t.slice(0, 900) : null;
+      WSTXT[titel] = out;
+      if (!done.d) { done.d = true; cb(out); }
+    })
+    .catch(function () { WSTXT[titel] = null; if (!done.d) { done.d = true; cb(null); } });
+}
 
 const WIKICACHE = {};
 function wikiHol(titel, cb) {
@@ -87,6 +131,7 @@ function wikiHol(titel, cb) {
     .catch(function () { WIKICACHE[titel] = null; if (!done.d) { done.d = true; cb(null); } });
 }
 
+const VP_MEMO = { vp: null, key: null, pos: null, located: false };
 function PanZoomMap(props) {
   const boxRef = useRef(null);
   const dragRef = useRef(null);
@@ -108,8 +153,9 @@ function PanZoomMap(props) {
     const spanFromLng = lngSpanDeg * Math.cos(clat * Math.PI / 180) / ASPECT;
     return { clat: clat, clng: clng, span: Math.max(latSpan, spanFromLng, 0.006) };
   }
-  const [vp, setVp] = useState(fit);
-  const [userPos, setUserPos] = useState(null);
+  const [vp, setVpRaw] = useState(function () { return (VP_MEMO.vp && VP_MEMO.key === props.fitKey) ? VP_MEMO.vp : fit(); });
+  function setVp(v) { setVpRaw(function (prev) { const n = typeof v === "function" ? v(prev) : v; VP_MEMO.vp = n; VP_MEMO.key = props.fitKey; return n; }); }
+  const [userPos, setUserPos] = useState(VP_MEMO.pos || null);
   const [tour, setTour] = useState(false);
   const [tourMode, setTourMode] = useState("auto");
   const [tourNow, setTourNow] = useState(null);
@@ -119,6 +165,8 @@ function PanZoomMap(props) {
   const posRef = useRef(null);
   const chainRef = useRef(0);
   const geoRef = useRef({ cell: "", list: [] });
+  const gelesenRef = useRef({});
+  const artRef = useRef({});
   useEffect(function () { posRef.current = userPos; }, [userPos]);
   useEffect(function () { tourRef.current = tour; }, [tour]);
   function tourRadius() {
@@ -158,12 +206,70 @@ function PanZoomMap(props) {
         cb();
       }).catch(function () { cb(); });
   }
+  const zellRef = useRef({});
+  function zelle(e) { return e.lat.toFixed(3).slice(0, -1) + "_" + e.lng.toFixed(3).slice(0, -1); }
+  const strRef = useRef({ cell: "", list: [] });
+  function strassenNah(cb) {
+    const p = hierPos();
+    const cell = "s" + p.lat.toFixed(2) + "_" + p.lng.toFixed(2);
+    if (strRef.current.cell === cell) { cb(); return; }
+    const r = Math.min(tourRadius(), 4000);
+    const muster = Object.keys(STRASSEN_LEX).map(function (k) { return k.replace(/-/g, "[- ]?"); }).join("|");
+    const q = '[out:json][timeout:20];way["highway"]["name"~"(' + muster + ')",i](around:' + r + ',' + p.lat + ',' + p.lng + ');out center tags;';
+    const done = { d: false };
+    setTimeout(function () { if (!done.d) { done.d = true; cb(); } }, 16000);
+    const server = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter"];
+    function hole(i) {
+      if (i >= server.length) return Promise.reject(new Error("kein Server"));
+      return fetch(server[i] + "?data=" + encodeURIComponent(q)).then(function (x) { if (!x.ok) throw new Error("http"); return x.json(); })
+        .catch(function () { return hole(i + 1); });
+    }
+    hole(0)
+      .then(function (j) {
+        const out = []; const namen = {};
+        (j.elements || []).forEach(function (w) {
+          const t = w.tags || {}; const name = t.name; if (!name || namen[name] || !w.center) return;
+          const per = strassenPerson(name); if (!per) return;
+          namen[name] = 1;
+          out.push({ id: "s" + w.id, title: name, lat: w.center.lat, lng: w.center.lon, address: name + " 1", stufe: "B", typ: "R",
+            icon: "\uD83D\uDEA6", color: "#546E7A", category: per[3] === "musik" ? "Musik" : (per[3] === "film" ? "Film" : "Literatur"),
+            artist: per[0], work: per[2], distance: "", wiki: per[0],
+            excerpt: "Diese Strasse traegt den Namen von\n" + per[0] + " - " + per[1] + ".\nHauptwerk: " + per[2] + ".",
+            ortstext: "Strassennamen sind stille Denkmaeler. " + per[0] + ", " + per[1] + " - das Werk " + per[2] + " ist der Grund fuer dieses Schild.",
+            frage: "Wussten Sie, wem diese Strasse gehoert?", kauf: per[2] + " - " + per[0], preis: null,
+            shop: per[3] === "musik" ? "https://www.amazon.de/s?k=" + encodeURIComponent(per[2] + " " + per[0] + " CD") : (per[3] === "film" ? "https://www.justwatch.com/de/Suche?q=" + encodeURIComponent(per[2]) : "https://www.amazon.de/s?i=stripbooks&k=" + encodeURIComponent(per[2] + " " + per[0])),
+            status: "live" });
+        });
+        strRef.current = { cell: cell, list: out };
+        if (!done.d) { done.d = true; cb(); }
+      }).catch(function () { strRef.current = { cell: cell, list: [] }; if (!done.d) { done.d = true; cb(); } });
+  }
   function kandidaten() {
     const r = tourRadius();
-    function ok(e) { return !playedRef.current[e.id] && distTo(e) <= r; }
+    function ok(e) { return !playedRef.current[e.id] && distTo(e) <= r && (zellRef.current[zelle(e)] || 0) < 3; }
     const a = ENTRIES.filter(ok).map(function (e) { return { e: e, k: distTo(e) * (e.stufe === "B" ? 1.2 : 1) }; });
     const w = geoRef.current.list.filter(ok).map(function (e) { return { e: e, k: distTo(e) * 1.45 }; });
-    return a.concat(w).sort(function (x, y) { return x.k - y.k; }).map(function (x) { return x.e; });
+    const strMax = tourMode === "kfz" ? 350 : (tourMode === "rad" ? 200 : 130);
+    const s = strRef.current.list.filter(function (e) { return ok(e) && distTo(e) <= strMax; }).map(function (e) { return { e: e, k: distTo(e) * 0.8 }; });
+    const baumMax = tourMode === "kfz" ? 0 : (tourMode === "rad" ? 120 : 90);
+    const b = [];
+    if (baumMax > 0) {
+      (props.trees || []).forEach(function (t, i) {
+        if (artRef.current[t.art]) return;
+        const d = distTo(t);
+        if (d > baumMax) return;
+        const id = "t" + i;
+        if (playedRef.current[id]) return;
+        b.push({ e: { id: id, title: t.art, art: t.art, lat: t.lat, lng: t.lng, address: t.strasse || "", stufe: "B", typ: "T",
+          icon: "\uD83C\uDF33", color: "#2E7D32", category: "Natur", artist: "Laenderbaum aus " + t.land, work: t.wiss || t.art,
+          distance: "", wiki: t.art,
+          excerpt: "Hier steht eine " + t.art + (t.wiss ? " (" + t.wiss + ")" : "") + " - ein Laenderbaum, dessen Heimat " + t.land + " ist." + (t.jahr ? " Gepflanzt " + t.jahr + "." : ""),
+          ortstext: "Leipzigs Strassenbaeume erzaehlen von der Welt: Diese Art stammt aus " + t.land + ". Kulisso verbindet den Baum mit Kultur, Partnern und Menschen aus " + t.land + " in der Stadt.",
+          frage: "Welches Land wuerden Sie in Ihrer Strasse pflanzen?", kauf: "Baumpatenschaft anfragen", preis: null,
+          shop: "https://www.google.com/search?q=Baumpatenschaft+Leipzig", status: "live" }, k: d * 0.9 });
+      });
+    }
+    return a.concat(w).concat(s).concat(b).sort(function (x, y) { return x.k - y.k; }).map(function (x) { return x.e; });
   }
   function speakSeq(chunks, chain, onDone) {
     if (!window.speechSynthesis) { onDone(); return; }
@@ -181,12 +287,25 @@ function PanZoomMap(props) {
     setTimeout(one, 150);
   }
   function sprechText(e, w) {
-    let intro = "In " + (e.address || "der Naehe") + ": " + e.title + ".";
+    let intro = e.typ === "R" ? e.title + ", benannt nach " + (e.artist || "") + "." : (e.typ === "T" ? "Ein Laenderbaum: " + e.title + ", aus " + e.artist.replace("Laenderbaum aus ", "") + "." : "In " + (e.address || "der Naehe") + ": " + e.title + ".");
     if (e.artist && e.artist !== e.title && e.stufe !== "W" && e.artist.indexOf("Tafel") < 0 && e.artist.indexOf("Kulturziel") < 0) intro += " " + e.artist + ".";
-    let haupt;
-    if (w && w.text) haupt = w.text;
-    else haupt = (e.excerpt || "").replace(/\n/g, " ").replace(/Quelle: Wiki[a-z]*\.?/g, "");
-    return (intro + " " + haupt).replace(/\s+/g, " ");
+    function saetze(s) { return (s || "").replace(/\n/g, " ").replace(/Quelle: Wiki[a-z]*\.?/g, "").replace(/Ortsangabe: Stadtgebiet[^.]*\./g, "").replace(/([.!?])\s+/g, "$1|").split("|").map(function (x) { return x.trim(); }).filter(function (x) { return x.length > 2; }); }
+    const MIN = 600, MAX = 1100;
+    let text = intro;
+    const quellen = [saetze(e.excerpt), w && w.text ? saetze(w.text) : [], saetze(e.ortstext)];
+    const gesehen = {};
+    quellen.forEach(function (q) {
+      q.forEach(function (s) {
+        const key = s.toLowerCase().slice(0, 40);
+        if (gesehen[key]) return;
+        if (text.length >= MAX) return;
+        if (text.length >= MIN && q === quellen[2]) return;
+        if (text.length + s.length > MAX + 120 && text.length >= MIN) return;
+        gesehen[key] = 1;
+        text += " " + s;
+      });
+    });
+    return text.replace(/\s+/g, " ");
   }
   function playNext() {
     if (!tourRef.current) return;
@@ -203,19 +322,36 @@ function PanZoomMap(props) {
       }
       const e = c[0];
       playedRef.current[e.id] = 1;
+      if (e.typ === "T") artRef.current[e.art] = 1;
+      zellRef.current[zelle(e)] = (zellRef.current[zelle(e)] || 0) + 1;
       setTourNow(e); setTourNext(c[1] || null);
       setVp(function (v) { return { clat: e.lat, clng: e.lng, span: v.span }; });
-      wikiHol(e.title, function (w) {
+      wikiHol(e.wiki || e.title, function (w) {
         if (!tourRef.current || chainRef.current !== chain) return;
         if (w && w.text) { e.ortstext = w.text; if (e.stufe === "W") e.excerpt = w.text.split(". ")[0] + "."; }
         const text = sprechText(e, w);
         const chunks = text.replace(/([.!?])\s+/g, "$1|").split("|").filter(function (s) { return s.trim().length > 1; });
         speakSeq(chunks, chain, function () {
-          setTimeout(function () { if (chainRef.current === chain) playNext(); }, 800);
+          const ortName = (e.address || "").replace(/ \(Stadtgebiet\)/, "").split(",")[0].trim();
+          if (!ortName || e.stufe === "W") { setTimeout(function () { if (chainRef.current === chain) playNext(); }, 800); return; }
+          wsHol(ortName, function (hits) {
+            if (chainRef.current !== chain) return;
+            const h = hits.filter(function (x) { return !gelesenRef.current[x.titel]; })[0];
+            if (!h) { setTimeout(function () { if (chainRef.current === chain) playNext(); }, 800); return; }
+            gelesenRef.current[h.titel] = 1;
+            wsText(h.titel, function (txt) {
+              if (chainRef.current !== chain) return;
+              if (!txt) { setTimeout(function () { if (chainRef.current === chain) playNext(); }, 600); return; }
+              const pc = ("Aus der Bibliothek: " + h.titel + ". " + txt.replace(/\n/g, ". ")).replace(/([.!?])\s+/g, "$1|").split("|").filter(function (s) { return s.trim().length > 1; });
+              speakSeq(pc, chain, function () {
+                setTimeout(function () { if (chainRef.current === chain) playNext(); }, 800);
+              });
+            });
+          });
         });
       });
     }
-    if (kandidaten().length < 5) geoNah(los); else los();
+    if (kandidaten().length < 5) geoNah(function () { strassenNah(los); }); else strassenNah(los);
   }
   function toggleTour() {
     if (tour) {
@@ -225,6 +361,9 @@ function PanZoomMap(props) {
       setTour(false); setTourNow(null); setTourNext(null);
     } else {
       playedRef.current = {};
+      zellRef.current = {};
+      gelesenRef.current = {};
+      artRef.current = {};
       tourRef.current = true;
       setTour(true);
       if (!userPos) locate();
@@ -280,8 +419,14 @@ function PanZoomMap(props) {
   }
 
   useEffect(function () {
+    if (VP_MEMO.key === props.fitKey && VP_MEMO.vp) return;
     setVp(fit());
   }, [props.fitKey]);
+  useEffect(function () {
+    if (props.autoLocate && !VP_MEMO.located) { VP_MEMO.located = true; locate(); return; }
+    if (VP_MEMO.pos && watchRef.current === null) locate();
+  }, []);
+  useEffect(function () { if (userPos) VP_MEMO.pos = userPos; }, [userPos]);
 
   const H = props.height || 300;
   const spanLng = vp.span * ASPECT / Math.cos(vp.clat * Math.PI / 180);
@@ -604,7 +749,7 @@ function PanZoomMap(props) {
               <button onClick={skipTour} style={{ background: "#8B1A1A", color: "white", border: "none", borderRadius: 8, padding: "7px 11px", fontWeight: 800, fontSize: 12, cursor: "pointer", flexShrink: 0 }}>{"\u23ED Weiter"}</button>
             </div>
           )}
-          {!tourNow && <div style={{ fontSize: 11, color: "#888" }}>Suche den naechsten Ort...</div>}
+          {!tourNow && <div style={{ fontSize: 11, color: "#888" }}>{"Suche den naechsten Ort..." + (strRef.current.list.length ? " (" + strRef.current.list.length + " Kuenstlerstrassen im Umkreis)" : "")}</div>}
         </div>
       )}
       {geoErr === "blocked" && (
@@ -659,6 +804,7 @@ export default function App() {
   const [selTree, setSelTree] = useState(null);
   const [selKand, setSelKand] = useState(null);
   const [showIntro, setShowIntro] = useState(true);
+  const [recht, setRecht] = useState(false);
   const [introGo, setIntroGo] = useState(false);
   const [autoLoc, setAutoLoc] = useState(false);
   const [curtain, setCurtain] = useState(false);
@@ -750,9 +896,15 @@ export default function App() {
   const [korbOpen, setKorbOpen] = useState(false);
   const [suchQ, setSuchQ] = useState("");
   const [wikiSum, setWikiSum] = useState(null);
+  const [wsTexte, setWsTexte] = useState([]);
+  const [wsVorschau, setWsVorschau] = useState(null);
   useEffect(function () {
-    setWikiSum(null);
-    if (view === "detail" && sel) wikiHol(sel.title, function (w) { setWikiSum(w); });
+    setWikiSum(null); setWsTexte([]); setWsVorschau(null);
+    if (view === "detail" && sel) {
+      wikiHol(sel.wiki || sel.title, function (w) { setWikiSum(w); });
+      const ortName = (sel.address || "").replace(/ \(Stadtgebiet\)/, "").split(",")[0].trim();
+      wsHol(ortName, function (t) { setWsTexte(t); if (t[0]) wsText(t[0].titel, function (x) { setWsVorschau(x); }); });
+    }
   }, [view, sel]);
   function imKorb(id) { return korb.some(function (x) { return x.id === id; }); }
   function toggleKorb(e) {
@@ -760,7 +912,7 @@ export default function App() {
   }
   function kaufen(e) {
     setSales(sales.concat([{ id: Date.now(), titel: e.work, artist: e.artist, preis: e.preis, provision: (e.preis || 0) * 0.07 }]));
-    const url = e.shop || ("https://www.genialokal.de/Suche/?q[]=" + encodeURIComponent((e.kauf || e.title || "") + " " + (e.artist || "")));
+    const url = e.shop || ("https://www.amazon.de/s?i=stripbooks&k=" + encodeURIComponent((e.kauf || e.title || "") + " " + (e.artist || "")));
     window.open(url, "_blank");
   }
   function einreichen() {
@@ -788,6 +940,28 @@ export default function App() {
   } : { minLat: 51.3, maxLat: 51.4, minLng: 12.3, maxLng: 12.8 };
   const tabs = [["map", "Karte"], ["route", "Route"], ["baeume", "Baeume"], ["kuenstler", "Kuenstler"], ["umsatz", "Umsatz"]];
 
+  if (recht) {
+    return (
+      <div style={{ position: "fixed", inset: 0, zIndex: 10000, background: "#1a0a0a", color: "#F5E9C8", fontFamily: "Georgia, serif", overflowY: "auto", padding: "24px 22px 60px" }}>
+        <button onClick={function () { setRecht(false); }} style={{ position: "fixed", top: 12, right: 14, background: "#C9A227", color: "#2B0A0A", border: "none", borderRadius: 20, padding: "8px 16px", fontWeight: 700, fontFamily: "inherit", cursor: "pointer" }}>{"Schliessen"}</button>
+        <div style={{ maxWidth: 560, margin: "0 auto", fontSize: 14, lineHeight: 1.6 }}>
+          <h2 style={{ color: "#C9A227", fontWeight: 700, fontSize: 20, marginTop: 30 }}>Impressum</h2>
+          <p style={{ fontSize: 12, opacity: 0.7, marginTop: -8 }}>{"Angaben gemaess Paragraph 5 DDG"}</p>
+          <p>{"wetando Management GmbH"}<br />{"Breitenfelder Strasse 12"}<br />{"04155 Leipzig"}<br />{"Vertreten durch den Geschaeftsfuehrer: Dr. Martin Schunk"}</p>
+          <p><b>{"Kontakt"}</b><br />{"E-Mail: kontakt@kulisso.de"}</p>
+          <p style={{ fontSize: 12.5, opacity: 0.85 }}>{"Verantwortlich fuer den Inhalt nach Paragraph 18 Abs. 2 MStV: Dr. Martin Schunk, Breitenfelder Strasse 12, 04155 Leipzig."}</p>
+          <p style={{ fontSize: 12.5, opacity: 0.85 }}>{"Verbraucherstreitbeilegung: Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."}</p>
+          <h2 style={{ color: "#C9A227", fontWeight: 700, fontSize: 20, marginTop: 30 }}>Datenschutz</h2>
+          <p>{"Kulisso braucht kein Konto und setzt keine Tracking-Cookies. Ihr Standort wird nur auf Ihrem Geraet verarbeitet und nicht an uns uebertragen. Tour-Korb und Route liegen im lokalen Speicher Ihres Browsers."}</p>
+          <p>{"Beim Laden von Karte und Inhalten werden technisch notwendige Anfragen an Dritte gestellt: OpenStreetMap-Kacheln, Wikipedia und Wikisource (Texte), Overpass-API (Strassennamen). Diese Anbieter erhalten dabei Ihre IP-Adresse. Shop-Links fuehren zu externen Anbietern (z. B. Amazon); dort gelten deren Bestimmungen, Kulisso erhaelt ggf. eine Provision."}</p>
+          <p>{"Die App wird bei Vercel gehostet; Vercel verarbeitet Zugriffsdaten (IP-Adresse, Zeitpunkt, Browser) zur Auslieferung. Eine Auswertung personenbezogener Daten durch uns findet nicht statt. Ihre Rechte auf Auskunft, Berichtigung, Loeschung und Beschwerde bei der Aufsichtsbehoerde (Saechsischer Datenschutzbeauftragter) richten Sie an die oben genannte Adresse."}</p>
+          <h2 style={{ color: "#C9A227", fontWeight: 700, fontSize: 20, marginTop: 30 }}>Quellen und Lizenzen</h2>
+          <p>{"Kartendaten: (c) OpenStreetMap-Mitwirkende, ODbL. Texte aus Wikipedia: CC BY-SA 4.0, Autoren gemaess Versionsgeschichte. Wikisource: gemeinfrei bzw. CC BY-SA. Strukturdaten: Wikidata, CC0. Baumdaten: Stadt Leipzig, Datenlizenz Deutschland 2.0. Eigene Texte und Gestaltung: (c) wetando Management GmbH"}</p>
+          <p style={{ fontSize: 12, opacity: 0.6, marginTop: 30 }}>{"Stand: Oktober 2026"}</p>
+        </div>
+      </div>
+    );
+  }
   if (showIntro) {
     return (
       <div style={{ maxWidth: 430, margin: "0 auto", height: "100vh", position: "relative", overflow: "hidden", background: "#2B0A0A", fontFamily: "Georgia, 'Times New Roman', serif" }}>
@@ -812,7 +986,10 @@ export default function App() {
             <img src={LOGO} alt="" style={{ width: 72, height: 72 }} />
           </div>
           <div style={{ color: "#F5E9C8", fontSize: 44, fontWeight: 700, letterSpacing: "0.04em", textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>Kulisso</div>
-          <div style={{ color: "#C9A227", fontSize: 13.5, letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 10, marginBottom: 44, animation: "glow 3s ease-in-out infinite" }}>Orte mit offenem Vorhang</div>
+          <div style={{ color: "#C9A227", fontSize: 13.5, letterSpacing: "0.28em", textTransform: "uppercase", marginTop: 10, marginBottom: 18, animation: "glow 3s ease-in-out infinite" }}>Orte mit offenem Vorhang</div>
+          <div style={{ color: "rgba(245,233,200,0.85)", fontSize: 14, lineHeight: 1.55, maxWidth: 340, marginBottom: 28 }}>
+            {"Kulisso zeigt, wo Kunst entstanden ist: das Gedicht an seinem Haus, die Oper an ihrer Buehne, der Baum mit seiner Geschichte. Gehen, radeln oder fahren Sie los - Kulisso erzaehlt unterwegs, was hier geschah, und fuehrt zum Werk. In ganz Deutschland - von Sylt bis zum Bodensee - und an der Algarve."}
+          </div>
           <button onClick={function () { setAutoLoc(true); setIntroGo(true); setTimeout(function () { setShowIntro(false); }, 1450); }}
             style={{ background: "linear-gradient(180deg,#E4C766,#C9A227 55%,#A8861D)", color: "#2B0A0A", border: "none",
               borderRadius: 30, padding: "16px 42px", fontSize: 17, fontWeight: 700, fontFamily: "inherit", letterSpacing: "0.03em",
@@ -822,6 +999,9 @@ export default function App() {
           <button onClick={function () { setIntroGo(true); setTimeout(function () { setShowIntro(false); }, 1450); }}
             style={{ background: "none", border: "none", color: "rgba(245,233,200,0.65)", fontSize: 12.5, marginTop: 20, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.05em", textDecoration: "underline", textUnderlineOffset: 3 }}>
             {"ohne Standort ansehen"}
+          </button>
+          <button onClick={function () { setRecht(true); }} style={{ background: "none", border: "none", color: "rgba(245,233,200,0.45)", fontSize: 11, marginTop: 22, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.08em" }}>
+            {"Impressum \u00B7 Datenschutz \u00B7 Quellen"}
           </button>
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 14, textAlign: "center", zIndex: 2, color: "rgba(245,233,200,0.4)", fontSize: 10.5, letterSpacing: "0.12em", animation: introGo ? "fadeC 0.5s ease forwards" : "none" }}>
@@ -918,7 +1098,7 @@ export default function App() {
             <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 800, fontSize: 14, padding: "12px 0 4px" }}>
               <span>Gesamt</span><span>{fmtEUR(korb.reduce(function (s, x) { return s + (x.preis || 0); }, 0))}</span>
             </div>
-            <div style={{ fontSize: 10.5, color: "#999", marginTop: 6 }}>Jeder Kauf oeffnet den jeweiligen Shop. Buecher gern gesammelt beim lokalen Buchhandel bestellen.</div>
+            <div style={{ fontSize: 10.5, color: "#999", marginTop: 6 }}>Jeder Kauf oeffnet den jeweiligen Shop. Buecher lassen sich gesammelt in einem Warenkorb bestellen.</div>
           </div>
         </div>
       )}
@@ -964,6 +1144,24 @@ export default function App() {
               <div style={{ background: "#F7F2F2", border: "1px solid #E5D5D5", borderRadius: 10, padding: "13px 15px", marginBottom: 14 }}>
                 <div style={{ fontSize: 10, fontWeight: 700, color: sel.color, textTransform: "uppercase", marginBottom: 6 }}>DER ORT</div>
                 <div style={{ fontSize: 13, color: "#1A1A1A", lineHeight: 1.65 }}>{sel.ortstext}</div>
+                {wsTexte.length > 0 && (
+                  <div style={{ marginTop: 12, padding: "11px 14px", background: "#F2F0FA", borderLeft: "3px solid #7B1FA2", borderRadius: "0 10px 10px 0" }}>
+                    <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: "0.08em", color: "#5E4A8B", marginBottom: 6 }}>TEXTE AM ORT (GEMEINFREI)</div>
+                    {wsVorschau && (
+                      <div style={{ fontFamily: "Georgia, serif", fontSize: 13, color: "#2A1E4A", lineHeight: 1.7, whiteSpace: "pre-line", marginBottom: 8, paddingBottom: 8, borderBottom: "1px solid #E0DAF0" }}>
+                        {wsVorschau.slice(0, 600) + (wsVorschau.length > 600 ? " ..." : "")}
+                      </div>
+                    )}
+                    {wsTexte.map(function (t) {
+                      return (
+                        <a key={t.url} href={t.url} target="_blank" rel="noreferrer" style={{ display: "block", fontSize: 12.5, color: "#4A2E86", fontWeight: 600, padding: "3px 0", textDecoration: "none" }}>
+                          {"\u2740 " + t.titel}
+                        </a>
+                      );
+                    })}
+                    <div style={{ fontSize: 9.5, color: "#999", marginTop: 5 }}>Volltexte auf Wikisource - historische Gedichte, Sagen und Berichte, die diesen Ort erwaehnen.</div>
+                  </div>
+                )}
                 {wikiSum && wikiSum.text && (
                   <div style={{ marginTop: 14, padding: "12px 14px", background: "#F7F5F0", borderLeft: "3px solid #C9A227", borderRadius: "0 10px 10px 0" }}>
                     <div style={{ fontSize: 10.5, fontWeight: 800, letterSpacing: "0.08em", color: "#8B7A3C", marginBottom: 6 }}>AUS WIKIPEDIA</div>
@@ -1152,10 +1350,10 @@ export default function App() {
                 </div>
                 <div style={{ background: "white", borderRadius: 10, border: "2px solid " + tf, padding: 13, fontSize: 12.5, lineHeight: 1.65, marginBottom: 14 }}>
                   <div style={{ fontWeight: 800, fontSize: 13, color: tf, marginBottom: 5 }}>{"Kultur-Verknuepfung " + selTree.land}</div>
-                  <div>{"\uD83C\uDFDB Partnerstadt: " + (m.p || "-")}</div>
-                  <div>{"\uD83C\uDF93 Institut/Verein: " + (m.i || "-")}</div>
-                  <div>{"\uD83C\uDFE2 Konsulat: " + (m.k || "-")}</div>
-                  <div>{"\uD83D\uDC65 Migration Leipzig: " + (m.m || "-")}</div>
+                  {m.p && m.p !== "-" && <div>{"\uD83C\uDFDB Partnerstadt: " + m.p}</div>}
+                  {m.i && m.i !== "-" && <div>{"\uD83C\uDF93 Institut/Verein: " + m.i}</div>}
+                  {m.k && m.k !== "-" && <div>{"\uD83C\uDFE2 Konsulat: " + m.k}</div>}
+                  {m.m && m.m !== "-" && <div>{"\uD83D\uDC65 Menschen aus diesem Land in Leipzig: " + m.m}</div>}
                 </div>
                 <button onClick={function () { setFOrt((selTree.strasse || "Leipzig") + ", Leipzig"); setSelTree(null); setView("kuenstler"); }}
                   style={{ width: "100%", padding: 12, background: "#8B1A1A", color: "white", border: "none", borderRadius: 10, fontWeight: 700, fontSize: 13.5, cursor: "pointer", marginBottom: 8 }}>
@@ -1211,19 +1409,12 @@ export default function App() {
               {m && (
                 <div style={{ background: "white", borderRadius: 10, border: "2px solid " + m.f, padding: 12, fontSize: 12, lineHeight: 1.6, marginBottom: 8 }}>
                   <div style={{ fontWeight: 800, fontSize: 14, color: m.f, marginBottom: 4 }}>{selLand}</div>
-                  <div>{"\uD83C\uDFDB Partnerstadt: " + m.p}</div>
-                  <div>{"\uD83C\uDF93 Institut/Verein: " + m.i}</div>
-                  <div>{"\uD83C\uDFE2 Konsulat: " + m.k}</div>
-                  <div>{"\uD83D\uDC65 Migration Leipzig: " + m.m}</div>
+                  {m.p && m.p !== "-" && <div>{"\uD83C\uDFDB Partnerstadt: " + m.p}</div>}
+                  {m.i && m.i !== "-" && <div>{"\uD83C\uDF93 Institut/Verein: " + m.i}</div>}
+                  {m.k && m.k !== "-" && <div>{"\uD83C\uDFE2 Konsulat: " + m.k}</div>}
+                  {m.m && m.m !== "-" && <div>{"\uD83D\uDC65 Menschen aus diesem Land in Leipzig: " + m.m}</div>}
                 </div>
               )}
-              <div style={{ background: "#FFF8E1", border: "1px solid #E6A817", borderRadius: 10, padding: 11, fontSize: 11.5, lineHeight: 1.55 }}>
-                <b>Luecke als Chance:</b> Groesste Migrantengruppen ohne eigenen Landesbaum:
-                {LUECKEN.map(function (l) {
-                  return <div key={l.land} style={{ marginTop: 3 }}>{"\u2022 " + l.land + " (" + l.m + ") - " + l.idee}</div>;
-                })}
-                <div style={{ marginTop: 5, fontSize: 10, color: "#7A5C00" }}>Quelle Migration: Stadt Leipzig, Einwohnerregister 2024</div>
-              </div>
             </div>
           );
         })()}
@@ -1339,7 +1530,7 @@ export default function App() {
                 style={{ display: "flex", alignItems: "flex-start", gap: 10, width: "100%", padding: "10px 12px", border: "1.5px solid " + (fRechte ? "#2E7D32" : "#E0E0E0"), borderRadius: 8, background: fRechte ? "#F1F8F1" : "white", cursor: "pointer", textAlign: "left", marginBottom: 14 }}>
                 <span style={{ width: 22, height: 22, borderRadius: 6, flexShrink: 0, border: "2px solid " + (fRechte ? "#2E7D32" : "#BBB"), background: fRechte ? "#2E7D32" : "white", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 800 }}>{fRechte ? "\u2713" : ""}</span>
                 <span style={{ fontSize: 11.5, color: "#444", lineHeight: 1.5 }}>
-                  <b>Rechtefreigabe (Pflicht):</b> Ich bin Urheber bzw. verfuege ueber die erforderlichen Nutzungsrechte (ggf. Verlagsfreigabe) und raeume FoxGo ein einfaches, widerrufliches Nutzungsrecht zur Darstellung von Werkauszug und Werkdaten ein.
+                  <b>Rechtefreigabe (Pflicht):</b> Ich bin Urheber bzw. verfuege ueber die erforderlichen Nutzungsrechte (ggf. Verlagsfreigabe) und raeume der wetando Management GmbH (Kulisso) ein einfaches, widerrufliches Nutzungsrecht zur Darstellung von Werkauszug und Werkdaten ein.
                 </span>
               </button>
               <button onClick={einreichen} disabled={!formOk}
